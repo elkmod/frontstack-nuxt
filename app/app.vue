@@ -40,6 +40,16 @@ const themes = [
     muted: 'text-gray-400',
     accent: 'bg-gray-400',
     button: 'bg-gradient-to-r from-gray-600 to-slate-600 focus:ring-gray-400'
+  },
+  {
+    name: 'amethyst',
+    label: 'Amethyst Dream',
+    bg: 'bg-gradient-to-br from-purple-900 via-violet-800 to-fuchsia-900',
+    title: 'text-white',
+    text: 'text-purple-100',
+    muted: 'text-purple-300',
+    accent: 'bg-purple-400',
+    button: 'bg-gradient-to-r from-purple-500 to-fuchsia-500 focus:ring-purple-400'
   }
 ]
 
