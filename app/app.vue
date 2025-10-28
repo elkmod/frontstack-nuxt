@@ -62,10 +62,16 @@ useHead({
 
 <template>
   <div 
-    class="min-h-screen flex items-center justify-center transition-colors duration-500 ease-in-out"
+    class="min-h-screen flex items-center justify-center transition-colors duration-500 ease-in-out relative overflow-hidden"
     :class="currentTheme.bg"
   >
-    <div class="text-center max-w-2xl mx-auto px-6">
+    <!-- Subtle animated background -->
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl animate-float-slow"></div>
+      <div class="absolute bottom-1/3 right-1/3 w-80 h-80 bg-white rounded-full blur-3xl animate-float-slow-delay"></div>
+    </div>
+
+    <div class="text-center max-w-2xl mx-auto px-6 relative z-10">
       <!-- Main Welcome Content -->
       <div class="mb-12">
         <h1 
@@ -136,3 +142,38 @@ useHead({
     </div>
   </div>
 </template>
+
+<style>
+/* Subtle floating animation for background elements */
+@keyframes float-slow {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px); 
+  }
+  33% { 
+    transform: translateY(-30px) translateX(20px); 
+  }
+  66% { 
+    transform: translateY(20px) translateX(-15px); 
+  }
+}
+
+@keyframes float-slow-delay {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px); 
+  }
+  33% { 
+    transform: translateY(25px) translateX(-20px); 
+  }
+  66% { 
+    transform: translateY(-20px) translateX(15px); 
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 20s ease-in-out infinite;
+}
+
+.animate-float-slow-delay {
+  animation: float-slow-delay 25s ease-in-out infinite;
+}
+</style>
